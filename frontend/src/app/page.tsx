@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { OfferwiseLogo } from '@/components/ui/OfferwiseLogo';
+import { Reveal } from '@/components/ui/Reveal';
 import {
   FileSearch,
   Building2,
@@ -31,39 +32,39 @@ export default function LandingPage() {
           
           {/* Left Hero Content */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-500/10 border border-orange-500/20 text-orange-300">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <div className="animate-fade-in-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-500/10 border border-orange-500/20 text-orange-300">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
               <span>Evidence-Grounded AI Offer Intelligence</span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+            <h1 className="animate-fade-in-up [animation-delay:100ms] text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
               Understand your offer. <br />
               <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-red-400 bg-clip-text text-transparent">
                 Make the right career move.
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-xl">
+            <p className="animate-fade-in-up [animation-delay:200ms] text-base md:text-lg text-slate-400 leading-relaxed max-w-xl">
               Offerwise analyzes your job offer, company intelligence, market compensation, and employment risks so you can decide with confidence.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="animate-fade-in-up [animation-delay:300ms] flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <Link
                 href="/signup"
-                className="px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-xl shadow-lg shadow-orange-600/30 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+                className="group px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-xl shadow-lg shadow-orange-600/30 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-orange-600/50 active:scale-[0.98]"
               >
                 <span>Analyze My Offer</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="#how-it-works"
-                className="px-6 py-3.5 text-sm font-semibold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-orange-500/40 rounded-xl transition-colors text-center"
+                className="px-6 py-3.5 text-sm font-semibold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-orange-500/40 rounded-xl transition-all text-center hover:scale-[1.02] active:scale-[0.98]"
               >
                 See How It Works
               </Link>
             </div>
 
-            <div className="flex items-center gap-6 pt-4 text-xs font-medium text-slate-400">
+            <div className="animate-fade-in-up [animation-delay:400ms] flex items-center gap-6 pt-4 text-xs font-medium text-slate-400">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
                 <span>100% Document Privacy</span>
@@ -80,8 +81,8 @@ export default function LandingPage() {
           </div>
 
           {/* Right Product Interactive Mockup (Reference Inspired) */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none glass-panel-dark rounded-2xl p-6 shadow-2xl border border-slate-700/60 glow-warm">
+          <div className="lg:col-span-6 relative animate-fade-in-up [animation-delay:250ms]">
+            <div className="relative mx-auto max-w-md lg:max-w-none glass-panel-dark rounded-2xl p-6 shadow-2xl border border-slate-700/60 glow-warm animate-float transition-transform duration-500 hover:scale-[1.015]">
               
               {/* Mockup Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -107,7 +108,7 @@ export default function LandingPage() {
                   <div className="relative w-24 h-24 flex items-center justify-center my-2">
                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                       <circle cx="50" cy="50" r="42" className="stroke-slate-800" strokeWidth="8" fill="transparent" />
-                      <circle cx="50" cy="50" r="42" stroke="#10B981" strokeWidth="8" strokeDasharray="264" strokeDashoffset="47" strokeLinecap="round" fill="transparent" />
+                      <circle cx="50" cy="50" r="42" stroke="#10B981" strokeWidth="8" strokeDasharray="264" strokeDashoffset="47" strokeLinecap="round" fill="transparent" className="animate-draw-ring" />
                     </svg>
                     <div className="absolute flex flex-col items-center">
                       <span className="text-2xl font-extrabold text-white font-mono">82</span>
@@ -205,13 +206,19 @@ export default function LandingPage() {
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-6">
             Trusted by candidates negotiating offers at leading technology firms
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 font-bold text-lg tracking-tight text-slate-300">
-            <span>Google</span>
-            <span>Microsoft</span>
-            <span>Amazon</span>
-            <span>TCS</span>
-            <span>Infosys</span>
-            <span>Flipkart</span>
+          <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex w-max items-center gap-16 font-bold text-lg tracking-tight text-slate-300 animate-marquee">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex items-center gap-16 shrink-0" aria-hidden={i === 1}>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">Google</span>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">Microsoft</span>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">Amazon</span>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">TCS</span>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">Infosys</span>
+                  <span className="opacity-60 hover:opacity-100 hover:text-orange-300 transition-all">Flipkart</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -219,11 +226,11 @@ export default function LandingPage() {
       {/* How Offerwise Works (5 Step Process) */}
       <section id="how-it-works" className="py-20 px-6 md:px-12 bg-slate-950 border-b border-slate-800/60">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <Reveal className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-orange-400">Step-by-step intelligence</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">How Offerwise works</h2>
             <p className="text-sm text-slate-400">Five automated steps to turn dense employment legal contracts into transparent career intelligence.</p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {[
@@ -232,21 +239,23 @@ export default function LandingPage() {
               { step: '3', title: 'Verify evidence', desc: 'Every claim is validated against raw text.', icon: ShieldCheck, badge: 'bg-amber-600/20 text-amber-400', hover: 'hover:border-amber-500/40' },
               { step: '4', title: 'Research company', desc: 'Live web signals check stability & growth.', icon: Building2, badge: 'bg-orange-600/20 text-orange-400', hover: 'hover:border-orange-500/40' },
               { step: '5', title: 'Compare market', desc: 'Benchmark pay against verified salary distributions.', icon: TrendingUp, badge: 'bg-red-600/20 text-red-400', hover: 'hover:border-red-500/40' }
-            ].map((s) => {
+            ].map((s, i) => {
               const Icon = s.icon;
               return (
-                <div key={s.step} className={`bg-slate-900/60 border border-slate-800 rounded-xl p-5 relative space-y-3 flex flex-col justify-between transition-colors ${s.hover}`}>
-                  <div className="flex items-center justify-between">
-                    <span className={`w-7 h-7 rounded-lg font-mono font-bold text-xs flex items-center justify-center ${s.badge}`}>
-                      0{s.step}
-                    </span>
-                    <Icon className="w-5 h-5 text-slate-500" />
+                <Reveal key={s.step} delayMs={i * 90}>
+                  <div className={`group bg-slate-900/60 border border-slate-800 rounded-xl p-5 relative space-y-3 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg ${s.hover}`}>
+                    <div className="flex items-center justify-between">
+                      <span className={`w-7 h-7 rounded-lg font-mono font-bold text-xs flex items-center justify-center transition-transform group-hover:scale-110 ${s.badge}`}>
+                        0{s.step}
+                      </span>
+                      <Icon className="w-5 h-5 text-slate-500 transition-colors group-hover:text-orange-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-white mb-1">{s.title}</h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">{s.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white mb-1">{s.title}</h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">{s.desc}</p>
-                  </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -256,49 +265,55 @@ export default function LandingPage() {
       {/* Feature Cards Grid */}
       <section id="features" className="py-20 px-6 md:px-12 bg-slate-900/30 border-b border-slate-800/60">
         <div className="max-w-6xl mx-auto space-y-16">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
+          <Reveal className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-orange-400">Core Capabilities</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">Built like financial software, for your career</h2>
             <p className="text-sm text-slate-400">No guesswork. Every feature is designed to protect your interests during offer negotiation.</p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-orange-500/40 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center">
-                <ShieldAlert className="w-5 h-5" />
+            <Reveal delayMs={0}>
+              <div className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 transition-all hover:border-orange-500/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-950/40">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <ShieldAlert className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Risk & Bond Detection</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Automatically identifies 2-year training bonds, penalty clauses, non-competes, extended notice periods, and variable pay traps.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Risk & Bond Detection</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Automatically identifies 2-year training bonds, penalty clauses, non-competes, extended notice periods, and variable pay traps.
-              </p>
-            </div>
+            </Reveal>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-red-500/40 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
-                <Building2 className="w-5 h-5" />
+            <Reveal delayMs={100}>
+              <div className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 transition-all hover:border-red-500/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-red-950/40">
+                <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <Building2 className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Company Intelligence</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Researches employer web signals to alert you about recent layoffs, funding rounds, corporate restructuring, or lawsuit history.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Company Intelligence</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Researches employer web signals to alert you about recent layoffs, funding rounds, corporate restructuring, or lawsuit history.
-              </p>
-            </div>
+            </Reveal>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-amber-500/40 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5" />
+            <Reveal delayMs={200}>
+              <div className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 transition-all hover:border-amber-500/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-amber-950/40">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Market Benchmarking</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Compares your fixed compensation against verified role & location salary distributions so you know if you are being underpaid.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white">Market Benchmarking</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Compares your fixed compensation against verified role & location salary distributions so you know if you are being underpaid.
-              </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Transparent Scoring Section */}
       <section id="trust" className="py-20 px-6 md:px-12 bg-slate-950">
-        <div className="max-w-5xl mx-auto bg-gradient-to-r from-slate-900 via-orange-950/30 to-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <Reveal className="max-w-5xl mx-auto bg-gradient-to-r from-slate-900 via-orange-950/30 to-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-4 max-w-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Zero Hallucinations</span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">Missing information is never treated as a negative fact.</h2>
@@ -308,11 +323,11 @@ export default function LandingPage() {
           </div>
           <Link
             href="/signup"
-            className="px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-xl shadow-lg shadow-orange-600/30 transition-all shrink-0"
+            className="px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-xl shadow-lg shadow-orange-600/30 transition-all shrink-0 hover:scale-[1.03] active:scale-[0.98]"
           >
             Analyze My Offer Now
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* Footer */}

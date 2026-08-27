@@ -52,7 +52,7 @@ export function OfferwiseLogo({ size = 'md', className = '', iconHref, textHref,
 
   const text = (
     <div className="flex flex-col leading-none">
-      <span className={`font-bold tracking-tight ${textSizes[size]} text-purple-500`}>
+      <span className={`font-bold tracking-tight ${textSizes[size]} bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent`}>
         Offerwise
       </span>
     </div>
