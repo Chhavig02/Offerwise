@@ -41,9 +41,9 @@ export function Navbar({ darkTheme = true }: NavbarProps) {
         >
           Log in
         </Link>
-        <Link 
-          href="/signup" 
-          className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-sm shadow-indigo-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+        <Link
+          href="/signup"
+          className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-lg shadow-sm shadow-orange-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
         >
           Get Started
         </Link>
