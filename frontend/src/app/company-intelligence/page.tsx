@@ -209,11 +209,11 @@ function CompanyIntelligenceContent() {
                 {result.companyIdentityConfidence === 'high' ? (
                   <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5 flex items-start gap-4">
                     <ShieldCheck className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm text-emerald-900 font-medium leading-relaxed">
                         Offerwise found strong evidence that the researched company matches the employer named in your offer.
                       </p>
-                      <div className="mt-2 text-xs text-emerald-700/80">
+                      <div className="mt-2 text-xs text-emerald-700/80 break-words">
                         Matches: {result.officialWebsite || result.companyName}
                       </div>
                     </div>
@@ -221,7 +221,7 @@ function CompanyIntelligenceContent() {
                 ) : result.companyIdentityConfidence === 'medium' ? (
                   <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex items-start gap-4">
                     <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm text-amber-900 font-medium leading-relaxed">
                         We found a likely match, but some company details could not be independently confirmed.
                       </p>
@@ -233,23 +233,23 @@ function CompanyIntelligenceContent() {
                       <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
                         <AlertTriangle className="w-4 h-4 text-amber-700" />
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-3 min-w-0">
                         <h3 className="font-bold text-amber-900">Company identity needs verification</h3>
                         <p className="text-sm text-amber-800 leading-relaxed">
                           We found company information that may not confidently match the employer in your offer. Treat company-specific findings cautiously and verify the employer&apos;s official details before relying on them.
                         </p>
                         
-                        <div className="bg-white/60 rounded-xl p-4 text-xs space-y-2">
-                          <div className="flex justify-between border-b border-amber-100 pb-2">
-                            <span className="text-amber-700/70 font-semibold">Offer states:</span>
-                            <span className="font-bold text-amber-900">{employerName}</span>
+                        <div className="bg-white/60 rounded-xl p-4 text-xs space-y-3">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-0.5 border-b border-amber-100 pb-3">
+                            <span className="text-amber-700/70 font-semibold shrink-0">Offer states:</span>
+                            <span className="font-bold text-amber-900 break-words sm:text-right">{employerName}</span>
                           </div>
-                          <div className="flex justify-between pt-1">
-                            <span className="text-amber-700/70 font-semibold">Research found:</span>
-                            <div className="text-right">
-                              <span className="font-bold text-amber-900 block">{result.companyName}</span>
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-0.5">
+                            <span className="text-amber-700/70 font-semibold shrink-0">Research found:</span>
+                            <div className="sm:text-right min-w-0">
+                              <span className="font-bold text-amber-900 block break-words">{result.companyName}</span>
                               {result.officialWebsite && (
-                                <span className="text-[10px] text-amber-700 block">{result.officialWebsite}</span>
+                                <span className="text-[10px] text-amber-700 block break-all">{result.officialWebsite}</span>
                               )}
                             </div>
                           </div>
