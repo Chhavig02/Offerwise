@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { OfferwiseLogo } from '@/components/ui/OfferwiseLogo';
 import { Reveal } from '@/components/ui/Reveal';
+import { CountUp } from '@/components/ui/CountUp';
 import {
   FileSearch,
   Building2,
@@ -111,11 +112,11 @@ export default function LandingPage() {
                       <circle cx="50" cy="50" r="42" stroke="#10B981" strokeWidth="8" strokeDasharray="264" strokeDashoffset="47" strokeLinecap="round" fill="transparent" className="animate-draw-ring" />
                     </svg>
                     <div className="absolute flex flex-col items-center">
-                      <span className="text-2xl font-extrabold text-white font-mono">82</span>
+                      <span className="text-2xl font-extrabold text-white font-mono"><CountUp to={82} /></span>
                       <span className="text-[9px] text-slate-400">/ 100</span>
                     </div>
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <span className="animate-pop-in [animation-delay:1.3s] px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     Strong Offer
                   </span>
                 </div>
@@ -123,23 +124,23 @@ export default function LandingPage() {
                 {/* Score Factors */}
                 <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3.5 space-y-1.5 text-xs font-medium">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Score factors</span>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.5s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Compensation</span>
                     <span className="text-emerald-400 font-mono font-bold">+25</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.6s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Benefits</span>
                     <span className="text-emerald-400 font-mono font-bold">+10</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.7s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Role & Growth</span>
                     <span className="text-emerald-400 font-mono font-bold">+15</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.8s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Risks & Bonds</span>
                     <span className="text-rose-400 font-mono font-bold">-15</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.9s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Market Alignment</span>
                     <span className="text-amber-400 font-mono font-bold">+8</span>
                   </div>
@@ -153,19 +154,19 @@ export default function LandingPage() {
                 {/* Company Signals */}
                 <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3.5 text-xs space-y-1.5">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Company Signals</span>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.7s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Hiring activity</span>
                     <span className="text-emerald-400 font-semibold">High</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.8s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Company growth</span>
                     <span className="text-emerald-400 font-semibold">Positive</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:0.9s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Recent funding</span>
                     <span className="text-emerald-400 font-semibold">Positive</span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="animate-fade-in-row [animation-delay:1.0s] flex justify-between text-slate-300 hover:translate-x-0.5 transition-transform">
                     <span>Restructuring</span>
                     <span className="text-amber-400 font-semibold">Watch</span>
                   </div>
@@ -183,8 +184,8 @@ export default function LandingPage() {
                   </div>
 
                   <div className="h-2 bg-slate-800 rounded-full w-full relative my-2">
-                    <div className="absolute top-0 bottom-0 left-0 w-3/5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full" />
-                    <div className="absolute top-1/2 left-2/5 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-2 border-orange-600 shadow-xs" />
+                    <div className="animate-bar-fill absolute top-0 bottom-0 left-0 w-3/5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full" />
+                    <div className="animate-marker-pop absolute top-1/2 left-2/5 w-3 h-3 bg-white rounded-full border-2 border-orange-600 shadow-xs" />
                   </div>
 
                   <span className="text-[10px] text-center text-slate-400 font-mono">
