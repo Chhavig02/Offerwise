@@ -1,6 +1,6 @@
 import React from 'react';
 import { NormalizedOfferData } from '@/types';
-import { Banknote, TrendingUp, Gift } from 'lucide-react';
+import { Banknote, TrendingUp, Gift, Info } from 'lucide-react';
 
 interface PayBreakdownProps {
   ext: NormalizedOfferData | undefined;
@@ -36,6 +36,14 @@ export function PayBreakdown({ ext, annualTotalComp, currencySymbol }: PayBreakd
             <>, entirely composed of fixed pay.</>
           ) : null}
         </p>
+      </div>
+
+      <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-slate-700 flex items-start gap-3">
+        <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+        <div>
+          <strong className="text-slate-900 font-bold block mb-0.5">Why this may be lower than the &quot;CTC&quot; in your offer letter.</strong>
+          This total only counts pay you&apos;re guaranteed to receive: fixed base plus performance-linked variable pay. It excludes employer PF contributions, gratuity, and any milestone, retention, or voluntary components your offer letter may bundle into a bigger headline &quot;CTC&quot; number — those aren&apos;t take-home pay, so we don&apos;t count them here.
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">

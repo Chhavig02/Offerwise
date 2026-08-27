@@ -32,9 +32,14 @@ export function OfferIntroduction({ ext, annualTotalComp, currencySymbol }: Offe
           Let&apos;s understand your offer
         </h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Here&apos;s what <strong className="text-indigo-600">{company}</strong> is offering you for the <strong className="text-slate-800">{role}</strong> role, 
+          Here&apos;s what <strong className="text-indigo-600">{company}</strong> is offering you for the <strong className="text-slate-800">{role}</strong> role,
           with a total package of <strong className="font-mono text-emerald-600">{getCompString()}</strong>.
         </p>
+        {annualTotalComp !== null && (
+          <p className="text-xs text-slate-400 max-w-xl mx-auto -mt-2">
+            This is your guaranteed take-home (fixed + variable pay) — it may read lower than the &quot;CTC&quot; figure in your offer letter. See the pay breakdown below for why.
+          </p>
+        )}
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
