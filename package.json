@@ -1,0 +1,10 @@
+{
+  "name": "offerwise-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build:all": "cd frontend && npm run build && cd ../backend && npm run build"
+  }
+}

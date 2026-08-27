@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id // Firebase UID
+  email        String
+  role         String   @default("user")
+  displayName  String?
+  currency     String   @default("INR")
+  jurisdiction String   @default("IN")
+  createdAt    DateTime @default(now())
+
+  offers    Offer[]
+}
+
+model Offer {
+  id          String   @id @default(uuid())
+  userId      String
+  companyName String?
+  status      String   @default("processing") // 'processing', 'completed', 'failed'
+  storagePath String?
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id])
+  analyses    OfferAnalysis[]
+}
+
+model OfferAnalysis {
+  id                 String   @id @default(uuid())
+  offerId            String
+  score              Int
+  summary            String
+  flags              Json     // Stores Flag[]
+  informationGaps    Json     // Stores Flag[] for gaps
+  positiveSignals    Json     // Stores Flag[] for opportunities
+  extractedData      Json     // Stores NormalizedOfferData
+  companyResearch    Json?    // Stores CompanyResearchOutcome (Phase 1 company intelligence)
+  comparison         Json?    // Stores OfferComparisonResult (Phase 2 offer/company comparison)
+  decision           Json?    // Stores DecisionAssessment (Phase 5 offer decision engine)
+  extractionVersion  String
+  rulesVersion       String
+  createdAt          DateTime @default(now())
+
+  offer              Offer    @relation(fields: [offerId], references: [id], onDelete: Cascade)
+}
