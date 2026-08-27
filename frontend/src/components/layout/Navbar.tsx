@@ -10,11 +10,11 @@ interface NavbarProps {
 
 export function Navbar({ darkTheme = true }: NavbarProps) {
   return (
-    <header className={`w-full py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-40 transition-colors ${
+    <header className={`w-full py-3 md:py-4 px-4 sm:px-6 md:px-12 flex items-center justify-between gap-3 sticky top-0 z-40 transition-colors ${
       darkTheme ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 text-white' : 'bg-white/80 backdrop-blur-md border-b border-slate-200 text-slate-900'
     }`}>
-      <Link href="/" className="flex items-center gap-2">
-        <OfferwiseLogo />
+      <Link href="/" className="flex items-center gap-2 shrink-0 min-w-0">
+        <OfferwiseLogo size="sm" />
       </Link>
 
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -32,10 +32,10 @@ export function Navbar({ darkTheme = true }: NavbarProps) {
         </Link>
       </nav>
 
-      <div className="flex items-center gap-3">
-        <Link 
-          href="/login" 
-          className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+      <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <Link
+          href="/login"
+          className={`px-2.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
             darkTheme ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-700 hover:bg-slate-100'
           }`}
         >
@@ -43,7 +43,7 @@ export function Navbar({ darkTheme = true }: NavbarProps) {
         </Link>
         <Link
           href="/signup"
-          className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-lg shadow-sm shadow-orange-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 rounded-lg shadow-sm shadow-orange-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
         >
           Get Started
         </Link>
