@@ -91,7 +91,7 @@ export default function DashboardPage() {
   const totalInfoGaps = activeOffersList.reduce((acc, curr) => acc + curr.infoGapCount, 0);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
       {/* Sidebar Navigation */}
       <Sidebar />
 
