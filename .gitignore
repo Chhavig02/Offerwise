@@ -51,5 +51,7 @@ backend/run-e2e.ts
 backend/test-api.js
 backend/e2e_output.txt
 
-# Claude Code local-only settings
-.claude/settings.local.json
+# Claude Code local dev tooling (not part of the shipped project)
+.claude/
+AGENTS.md
+CLAUDE.md
