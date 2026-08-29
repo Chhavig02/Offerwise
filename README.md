@@ -311,6 +311,7 @@ TAVILY_API_KEY=
 ADZUNA_APP_ID=
 ADZUNA_APP_KEY=
 FIREBASE_PROJECT_ID=
+ADMIN_EMAILS=
 ```
 
 </td>
@@ -363,6 +364,7 @@ A small number of backend tests call the live Gemini and Groq APIs directly and 
 - API keys (Gemini, Groq, Tavily, Adzuna, Firebase Admin, database credentials) are used server-side only and are never sent to or readable by the frontend.
 - `.env` files are excluded from version control and must never be committed.
 - All `/api/offers` and `/api/user` routes require a valid Firebase ID token; offer routes additionally verify that the requested offer belongs to the authenticated user before returning or modifying it.
+- `/api/admin/*` routes (list every uploaded offer, download any user's original file) require a valid Firebase ID token **and** an email present in the `ADMIN_EMAILS` allowlist; if that variable is unset, admin access is disabled entirely.
 - Errors from external providers are sanitized before being logged or surfaced — authorization headers and API keys are stripped rather than passed through.
 
 <br>

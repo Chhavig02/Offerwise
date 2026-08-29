@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import offersRouter from './routes/offers';
 import userRouter from './routes/user';
+import adminRouter from './routes/admin';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 // Routes
 app.use('/api/offers', offersRouter);
 app.use('/api/user', userRouter);
+app.use('/api/admin', adminRouter);
 
 // Health check & root route
 app.get('/', (req, res) => {
