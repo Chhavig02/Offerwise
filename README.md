@@ -18,8 +18,16 @@ Upload a job offer. Get a report where every number, risk, and recommendation tr
 
 <br>
 
+<div align="center">
+<img src="docs/screenshots/landing-hero.png" alt="Offerwise landing page — evidence-grounded AI offer intelligence" width="850">
+</div>
+
+<br>
+
 ## Contents
 
+- [Screenshots](#screenshots)
+- [Architecture](#architecture)
 - [Core Features](#core-features)
 - [How It Works](#how-it-works)
 - [AI Providers](#ai-providers)
@@ -33,6 +41,51 @@ Upload a job offer. Get a report where every number, risk, and recommendation tr
 - [Security](#security)
 - [Current Status](#current-status)
 - [Roadmap](#roadmap)
+
+<br>
+
+## Screenshots
+
+<table>
+<tr>
+<td width="50%">
+
+**Dashboard**
+<img src="docs/screenshots/dashboard.png" alt="Offerwise dashboard showing offer stats and an empty state" width="100%">
+
+</td>
+<td width="50%">
+
+**Upload an offer**
+<img src="docs/screenshots/upload-offer.png" alt="Upload Offer Letter page — drag and drop a PDF or DOCX" width="100%">
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**How it works**
+<img src="docs/screenshots/how-it-works.png" alt="Five-step pipeline shown on the landing page" width="100%">
+
+</td>
+<td width="50%">
+
+**Core capabilities**
+<img src="docs/screenshots/core-capabilities.png" alt="Risk & bond detection, company intelligence, and market benchmarking feature cards" width="100%">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+## Architecture
+
+<div align="center">
+<img src="docs/screenshots/architecture.svg" alt="Offerwise system architecture — Next.js frontend, Express backend, Gemini/Groq, Tavily, Adzuna, PostgreSQL" width="900">
+</div>
+
+The frontend never calls Gemini, Groq, Tavily, or Adzuna directly — every external call is made server-side by the backend, and the Decision Engine (bottom of the pipeline strip above) reads only the outputs already validated earlier in the pipeline. See [How It Works](#how-it-works) below for the full step-by-step breakdown.
 
 <br>
 
