@@ -14,11 +14,12 @@ import {
   Building2, 
   TrendingUp, 
   ShieldCheck, 
-  HelpCircle, 
-  Settings, 
-  LogOut, 
+  HelpCircle,
+  Settings,
+  LogOut,
   Menu,
-  X
+  X,
+  ShieldAlert
 } from 'lucide-react';
 
 export function Sidebar() {
@@ -37,6 +38,16 @@ export function Sidebar() {
     { name: 'Information Gaps', href: '/information-gaps', icon: HelpCircle },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];
+
+  const adminEmails = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || '')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  const isAdmin = Boolean(user?.email && adminEmails.includes(user.email.toLowerCase()));
+
+  if (isAdmin) {
+    navItems.push({ name: 'Admin', href: '/admin', icon: ShieldAlert });
+  }
 
   const handleLogout = async () => {
     try {
