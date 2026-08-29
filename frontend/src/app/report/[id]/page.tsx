@@ -38,6 +38,32 @@ export default function ReportPage() {
   
   const [showEvidenceDrawer, setShowEvidenceDrawer] = useState(false);
   const [selectedFlagTitle, setSelectedFlagTitle] = useState<string | undefined>();
+  const [downloadingOriginal, setDownloadingOriginal] = useState(false);
+
+  const handleDownloadOriginal = async () => {
+    if (!id || typeof id !== 'string' || !user) {
+      alert('Please sign in to download the original offer letter.');
+      return;
+    }
+    try {
+      setDownloadingOriginal(true);
+      const token = await user.getIdToken();
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+      const res = await fetch(`${apiUrl}/api/offers/${id}/download`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (!res.ok) {
+        throw new Error('The original offer letter could not be downloaded.');
+      }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'The original offer letter could not be downloaded.');
+    } finally {
+      setDownloadingOriginal(false);
+    }
+  };
 
   useEffect(() => {
     const fetchAnalysis = async () => {
@@ -184,11 +210,12 @@ export default function ReportPage() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => alert('PDF export feature: Generates printable grounded report')}
-              className="px-3.5 py-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm"
+              onClick={handleDownloadOriginal}
+              disabled={downloadingOriginal}
+              className="px-3.5 py-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Download className="w-4 h-4 text-slate-500" />
-              <span className="hidden sm:inline">Download</span>
+              <span className="hidden sm:inline">{downloadingOriginal ? 'Opening…' : 'Original PDF'}</span>
             </button>
             <button
               onClick={() => alert('Private share link copied to clipboard')}
